@@ -2,16 +2,6 @@
 
 A phone-first Progressive Web App prototype based on the MATLAB Big Orange Chord workflow.
 
-## Open in VS Code
-Open the entire `big-orange-chord-mobile` folder, not just `index.html`.
-
-## Run locally
-A PWA/service worker should be served over HTTP rather than opened as a `file://` page.
-
-Easy options:
-- VS Code: install the **Live Server** extension, then right-click `index.html` → **Open with Live Server**.
-- Python (if installed): from this folder run `python -m http.server 8000`, then visit `http://localhost:8000`.
-
 ## Files
 - `index.html` — screen structure
 - `styles.css` — phone/projector visual design
@@ -48,9 +38,7 @@ The CSS and JavaScript are deliberately stored as readable source rather than mi
 
 ## Proposed public-beta route
 
-1. Keep the source in a Git repository (for example GitHub) so every change is visible and reversible.
-2. Publish the static files over HTTPS (GitHub Pages is sufficient; no server-side code is required).
-3. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
-4. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
-5. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
-6. Only after the PWA is stable, consider packaging the same web code for app stores.
+1. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
+2. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
+3. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
+4. Only after the PWA is stable, we can consider packaging the same web code for app stores.
