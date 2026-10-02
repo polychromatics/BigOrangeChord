@@ -1,12 +1,56 @@
-# Big Orange Chord
-Chord progressions on screen for jam sessions with friends.
+# Big Orange Chord — Mobile alpha
 
-A jam-session prompt for chord sequences, editable in chords, beats and time signatures.
+A phone-first Progressive Web App prototype based on the MATLAB Big Orange Chord workflow.
 
-A simple structure of Verse, Chorus and Bridge, which can be arranged in any order. Each section can be repeated as many times as required, as can the entire sequence. When a section isn't being used, it simply disappears.
+## Open in VS Code
+Open the entire `big-orange-chord-mobile` folder, not just `index.html`.
 
-A solo list swaps soloists on your chosen verse repeat increment, allowing a predetermined flow — particularly useful when jamming with larger groups, where eye contact and intuition aren't always possible. Again, when not being used/left empty, it simply disappears.
+## Run locally
+A PWA/service worker should be served over HTTP rather than opened as a `file://` page.
 
-This application facilitates song loading/saving, variable structures, time signatures, BPM tapping, solos, fullscreen projection, and the world's most aggressive orange current-chord indicator!
+Easy options:
+- VS Code: install the **Live Server** extension, then right-click `index.html` → **Open with Live Server**.
+- Python (if installed): from this folder run `python -m http.server 8000`, then visit `http://localhost:8000`.
 
-Enjoy! (but don't let it be too prescriptive.. feel the flow, use it as a guide.. x)
+## Files
+- `index.html` — screen structure
+- `styles.css` — phone/projector visual design
+- `app.js` — playback engine, setup, songs, solos, BPM/count-in
+- `manifest.webmanifest` — installable PWA metadata
+- `sw.js` — offline cache
+
+## Alpha functionality
+- Verse / Chorus / Bridge with user-defined order and repeats
+- Per-chord beat counts
+- BPM entry and tap BPM
+- Variable count-in
+- Full repeats
+- Solo list with user-defined Verse repeats per soloist
+- Local song library (browser storage)
+- JSON song export/import for backup or sharing
+- Fullscreen performance view
+- Offline cache once served/installed
+
+## Important alpha note
+This is deliberately the first mobile prototype. Test the musical behaviour before treating it as a release build. Browser timer behaviour can vary when the phone locks or the app is backgrounded, so keep the performance screen awake/foregrounded during a jam.
+
+## Source layout
+
+This project is intentionally kept dependency-free and readable:
+
+- `index.html` — the two app screens and their controls.
+- `styles.css` — layout, responsive behaviour and colour/visual design.
+- `app.js` — song state, playback timing, repeats, solos, saving/loading and UI updates.
+- `manifest.webmanifest` — metadata used when the app is installed to a phone/home screen.
+- `sw.js` — service worker used to cache the app for offline use.
+
+The CSS and JavaScript are deliberately stored as readable source rather than minified production code so the project does not become a black box.
+
+## Proposed public-beta route
+
+1. Keep the source in a Git repository (for example GitHub) so every change is visible and reversible.
+2. Publish the static files over HTTPS (GitHub Pages is sufficient; no server-side code is required).
+3. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
+4. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
+5. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
+6. Only after the PWA is stable, consider packaging the same web code for app stores.

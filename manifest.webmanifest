@@ -1,0 +1,9 @@
+{
+  "name":"Big Orange Chord",
+  "short_name":"Orange Chord",
+  "description":"Chord progressions on screen for jam sessions with friends.",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#000000",
+  "theme_color":"#000000"
+}
