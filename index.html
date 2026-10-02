@@ -39,7 +39,20 @@
       <div id="sectionEditors"></div>
       <section class="card"><h2>SOLOS</h2><label>Names (comma separated)<input id="soloNames" placeholder="Jerry, Frank, Natasha"></label><label>Verse repeats per soloist<input id="soloEvery" type="number" min="1" value="1"></label></section>
       <section class="card"><h2>SONGS</h2><div class="row"><input id="songName" placeholder="Song name"><button id="saveSongBtn">SAVE</button></div><div class="row"><select id="songSelect"></select><button id="loadSongBtn">LOAD</button><button id="deleteSongBtn">DELETE</button></div><div class="row"><button id="exportBtn">EXPORT JSON</button><label class="file-button">IMPORT JSON<input id="importInput" type="file" accept="application/json,.json"></label></div></section>
-      <section class="card about"><h2>ABOUT</h2><p><strong>Big Orange Chord</strong><br>Chord progressions on screen for jam sessions with friends.</p><p>Concept, design & testing: Natasha Lucas<br>Development assistance: OpenAI ChatGPT</p></section>
+      <section class="card about">
+        <h2>ABOUT</h2><p><strong>Big Orange Chord</strong>
+          <br>Chord progressions on screen for jam sessions with friends.</p>
+          <p>A jam-session prompt for chord sequences, editable in chords, beats and time signatures.</p>
+
+            <p>A simple structure of Verse, Chorus and Bridge, which can be arranged in any order. Each section can be repeated as many times as required, as can the entire sequence. When a section isn't being used, it simply disappears.
+              <br>
+            A solo list swaps soloists on your chosen verse repeat increment, allowing a predetermined flow — particularly useful when jamming with larger groups, where eye contact and intuition aren't always possible. Again, when not being used/left empty, it simply disappears.
+            <br>
+            This application facilitates song loading/saving, variable structures, time signatures, BPM tapping, solos, full-screen projection, and the world's most aggressive orange current-chord indicator!
+            <br>
+            Enjoy! (but don't let it be too prescriptive.. feel the flow, use it as a guide.. x)
+            </p>
+          <p>Concept, design & testing: Natasha Lucas<br>Development assistance: OpenAI ChatGPT</p></section>
       <div class="setup-actions"><button id="applyBtn" class="primary">APPLY / MAIN</button></div>
     </section>
   </main>
