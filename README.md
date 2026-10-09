@@ -2,7 +2,7 @@
 
 Big Orange Chord is a free, open-source musical chord-prompt application for jam sessions.
 
-Concept, design and testing: Natasha Lucas
+Concept, design and testing: Natasha Lucas. 
 Development assistance: OpenAI ChatGPT
 
 The project began as a MATLAB GUI and has evolved into a mobile-friendly Progressive Web App (PWA), hosted on GitHub Pages.
@@ -56,9 +56,6 @@ Live application: https://polychromatics.github.io/BigOrangeChord/
 - JSON song export/import for backup or sharing
 - Fullscreen performance view
 - Offline cache once served/installed
-
-## Important alpha note
-This is deliberately the first mobile prototype. Test the musical behaviour before treating it as a release build. Browser timer behaviour can vary when the phone locks or the app is backgrounded, so keep the performance screen awake/foregrounded during a jam.
 
 ## Source layout
 
