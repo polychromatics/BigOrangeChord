@@ -27,7 +27,7 @@
     </section>
 
     <section id="setupScreen" class="screen hidden setup">
-      <header class="topbar"><div><strong>SETUP</strong><span>Big Orange Chord Mobile — alpha</span></div><button id="backBtn" class="ghost">MAIN</button></header>
+      <header class="topbar"><div><strong>SETUP</strong><span>Big Orange Chord Mobile — Beta 2</span></div><button id="backBtn" class="ghost">MAIN</button></header>
       <div class="settings-grid">
         <label>BPM<input id="bpm" type="number" min="30" max="300" value="120"></label>
         <button id="tapBtn">TAP BPM</button>
@@ -35,34 +35,20 @@
         <label>FULL REPEAT<input id="fullRepeat" type="number" min="1" value="1"></label>
         <label>TIME SIG<select id="timeSig"><option>4/4</option><option>3/4</option><option>2/4</option><option>6/8</option></select></label>
       </div>
+      <section class="card">
+        <h2>METRONOME</h2>
+        <div class="settings-grid">
+          <label>SOUND<select id="metronome"><option value="off">OFF</option><option value="tick">Soft tick</option><option value="wood">Woodblock</option></select></label>
+          <label>TICK EVERY N BEATS<input id="metronomeEvery" type="number" min="1" max="64" value="1"></label>
+          <label>VOLUME<input id="metronomeVolume" type="range" min="0.02" max="0.35" step="0.01" value="0.12"></label>
+        </div>
+        <p>Sound starts when you press START. Keep this page visible and your screen awake during playback.</p>
+      </section>
       <h2>ORDER</h2><div id="orderControls" class="order"></div>
       <div id="sectionEditors"></div>
       <section class="card"><h2>SOLOS</h2><label>Names (comma separated)<input id="soloNames" placeholder="Jerry, Frank, Natasha"></label><label>Verse repeats per soloist<input id="soloEvery" type="number" min="1" value="1"></label></section>
       <section class="card"><h2>SONGS</h2><div class="row"><input id="songName" placeholder="Song name"><button id="saveSongBtn">SAVE</button></div><div class="row"><select id="songSelect"></select><button id="loadSongBtn">LOAD</button><button id="deleteSongBtn">DELETE</button></div><div class="row"><button id="exportBtn">EXPORT JSON</button><label class="file-button">IMPORT JSON<input id="importInput" type="file" accept="application/json,.json"></label></div></section>
-      <section class="card about">
-        <h2>ABOUT</h2><p><strong>Big Orange Chord<br>Chord progressions on screen for jam sessions with friends.</strong>
-          <br>A jam-session prompt for chord sequences, editable in chords, beats and time signatures.</p>
-            <p>A simple structure of Verse, Chorus and Bridge, which can be arranged in any order. Each section can be repeated as many times as required, as can the entire sequence. When a section isn't being used, it simply disappears.
-             </p><p>
-            A solo list swaps soloists on your chosen verse repeat increment, allowing a predetermined flow — particularly useful when jamming with larger groups, where eye contact and intuition aren't always possible. Again, when not being used/left empty, it simply disappears.
-            </p><p>
-            This application facilitates song loading/saving, variable structures, time signatures, BPM tapping, solos, full-screen projection, and the world's most aggressively orange current-chord indicator!
-            </p><p>
-            Enjoy! (but don't let it be too prescriptive.. feel the flow, use it as a guide.. x)
-            </p><p>
-              ## Alpha functionality<br>
-- Verse / Chorus / Bridge with user-defined order and repeats<br>
-- Per-chord beat counts<br>
-- BPM entry and tap BPM<br>
-- Variable count-in<br>
-- Full repeats<br>
-- Solo list with user-defined Verse repeats per soloist<br>
-- Local song library (browser storage)<br>
-- JSON song export/import for backup or sharing<br>
-- Fullscreen performance view<br>
-- Offline cache once served/installed<br>
-            </p>
-          <p>Concept, design & testing: Natasha Lucas<br>Development assistance: OpenAI ChatGPT</p></section>
+      <section class="card about"><h2>ABOUT</h2><p><strong>Big Orange Chord</strong><br>Chord progressions on screen for jam sessions with friends.</p><p>A jam-session prompt for chord sequences, editable in chords, beats and time signatures.</p><p>A simple structure of Verse, Chorus and Bridge, which can be arranged in any order. Each section can be repeated as many times as required, as can the entire sequence. When a section isn't being used, it simply disappears.<br>A solo list swaps soloists on your chosen verse repeat increment, allowing a predetermined flow — particularly useful when jamming with larger groups, where eye contact and intuition aren't always possible. Again, when not being used/left empty, it simply disappears.<br>This application facilitates song loading/saving, variable structures, time signatures, BPM tapping, solos, full-screen projection, and the world's most aggressively orange current-chord indicator!<br>Enjoy! (but don't let it be too prescriptive.. feel the flow, use it as a guide.. x)</p><p>Concept, design &amp; testing: Natasha Lucas<br>Development assistance: OpenAI ChatGPT</p></section>
       <div class="setup-actions"><button id="applyBtn" class="primary">APPLY / MAIN</button></div>
     </section>
   </main>

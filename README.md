@@ -2,6 +2,16 @@
 
 A phone-first Progressive Web App prototype based on the MATLAB Big Orange Chord workflow.
 
+## Open in VS Code
+Open the entire `big-orange-chord-mobile` folder, not just `index.html`.
+
+## Run locally
+A PWA/service worker should be served over HTTP rather than opened as a `file://` page.
+
+Easy options:
+- VS Code: install the **Live Server** extension, then right-click `index.html` → **Open with Live Server**.
+- Python (if installed): from this folder run `python -m http.server 8000`, then visit `http://localhost:8000`.
+
 ## Files
 - `index.html` — screen structure
 - `styles.css` — phone/projector visual design
@@ -38,7 +48,19 @@ The CSS and JavaScript are deliberately stored as readable source rather than mi
 
 ## Proposed public-beta route
 
-1. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
-2. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
-3. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
-4. Only after the PWA is stable, we can consider packaging the same web code for app stores.
+1. Keep the source in a Git repository (for example GitHub) so every change is visible and reversible.
+2. Publish the static files over HTTPS (GitHub Pages is sufficient; no server-side code is required).
+3. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
+4. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
+5. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
+6. Only after the PWA is stable, consider packaging the same web code for app stores.
+
+
+## Beta 2: timing and updates
+- Clock anchored to `performance.now()`; a late visual callback catches up missed beats.
+- Optional Web Audio metronome (off / soft tick / woodblock), tick every N beats and volume.
+- Audio events scheduled ahead on the Web Audio clock to reduce timing jitter.
+- Service worker uses network-first requests, caches for offline use, and deletes old named caches.
+- Publish the **contents** of this directory to the root of the GitHub Pages repository.
+- After uploading, allow the Pages workflow to complete and reload the page. Existing open tabs may need one further reload.
+- Browser background throttling, OS audio policies, and screen locking still prevent guaranteed uninterrupted timing. Keep the app foregrounded and screen awake. For critical ensemble timing use a dedicated metronome.
