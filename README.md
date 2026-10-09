@@ -1,23 +1,49 @@
-# Big Orange Chord — Mobile alpha
+# Big Orange Chord — Project Instructions
 
-A phone-first Progressive Web App prototype based on the MATLAB Big Orange Chord workflow.
+Big Orange Chord is a free, open-source musical chord-prompt application for jam sessions.
 
-## Open in VS Code
-Open the entire `big-orange-chord-mobile` folder, not just `index.html`.
+Concept, design and testing: Natasha Lucas
+Development assistance: OpenAI ChatGPT
 
-## Run locally
-A PWA/service worker should be served over HTTP rather than opened as a `file://` page.
+The project began as a MATLAB GUI and has evolved into a mobile-friendly Progressive Web App (PWA), hosted on GitHub Pages.
 
-Easy options:
-- VS Code: install the **Live Server** extension, then right-click `index.html` → **Open with Live Server**.
-- Python (if installed): from this folder run `python -m http.server 8000`, then visit `http://localhost:8000`.
+Repository: https://github.com/polychromatics/BigOrangeChord
+
+Live application: https://polychromatics.github.io/BigOrangeChord/
+
+## Development principles
+
+- Musical timing and BPM accuracy are the highest priority. Visual updates must never dictate or slow down the beat.
+
+- Keep the interface clean, readable, responsive and suitable for phone screens and projection.
+
+- Preserve the enormous orange current-chord indicator.
+
+- Support Verse, Chorus, Bridge, configurable repeats, count-in, solo rotation and song saving/loading.
+
+- Support optional metronome audio.
+
+- Maintain reliable offline operation and automatic application-cache updates.
+
+- No user accounts, subscriptions, advertising, cloud dependency or mandatory internet connection during performances.
+
+- Keep HTML, CSS and JavaScript properly formatted, commented and understandable. This is a collaborative development project, not a black box.
+
+- Preserve working features unless changes are explicitly requested.
+
+- Provide complete updated source files for testing and deployment.
+
+- Keep the application a musical prompt, not a substitute for musicians listening to and interacting with one another.
+
+- Guiding philosophy: Real playing, real sharing, real human interaction — with an aggressively orange chord available when somebody loses their place.
+
 
 ## Files
-- `index.html` — screen structure
-- `styles.css` — phone/projector visual design
-- `app.js` — playback engine, setup, songs, solos, BPM/count-in
-- `manifest.webmanifest` — installable PWA metadata
-- `sw.js` — offline cache
+- `index.html` — the two app screens and their controls.
+- `styles.css` — layout, responsive behaviour and colour/visual design.
+- `app.js` — playback engine, setup, songs, BPM/count-in, repeats, solos, saving/loading and UI updates.
+- `manifest.webmanifest` — metadata used when the app is installed to a phone/home screen.
+- `sw.js` — service worker used to cache the app for offline use.
 
 ## Alpha functionality
 - Verse / Chorus / Bridge with user-defined order and repeats
@@ -37,26 +63,14 @@ This is deliberately the first mobile prototype. Test the musical behaviour befo
 ## Source layout
 
 This project is intentionally kept dependency-free and readable:
-
-- `index.html` — the two app screens and their controls.
-- `styles.css` — layout, responsive behaviour and colour/visual design.
-- `app.js` — song state, playback timing, repeats, solos, saving/loading and UI updates.
-- `manifest.webmanifest` — metadata used when the app is installed to a phone/home screen.
-- `sw.js` — service worker used to cache the app for offline use.
-
 The CSS and JavaScript are deliberately stored as readable source rather than minified production code so the project does not become a black box.
 
-## Proposed public-beta route
-
-1. Keep the source in a Git repository (for example GitHub) so every change is visible and reversible.
-2. Publish the static files over HTTPS (GitHub Pages is sufficient; no server-side code is required).
-3. Open the HTTPS URL on iPhone and Android and add/install it from the browser to the home screen.
-4. Load the installed app once, switch the phone to airplane mode, and confirm playback, setup and the local song library still work.
-5. Test screen-lock/background behaviour separately; Big Orange Chord is intended to remain visible while being used as a musical prompt.
-6. Only after the PWA is stable, consider packaging the same web code for app stores.
-
-
 ## Beta 2: timing and updates
+This is a significant improvement, but I wouldn't yet call it a guaranteed metronome. Mobile browsers can suspend or throttle processing when the phone locks, the browser goes into the background, or the operating system interrupts audio.
+For now, keep the app visible and the screen awake during playing. The next meaningful test is to compare it against a separate metronome for several minutes, especially across chord and section transitions.
+The JavaScript files pass syntax validation, but live mobile timing testing is required.
+I'd particularly love your feedback on whether the tempo stays consistent through Verse → Chorus → Verse, and whether the metronome ticks sound evenly spaced.
+
 - Clock anchored to `performance.now()`; a late visual callback catches up missed beats.
 - Optional Web Audio metronome (off / soft tick / woodblock), tick every N beats and volume.
 - Audio events scheduled ahead on the Web Audio clock to reduce timing jitter.
