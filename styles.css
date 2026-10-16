@@ -219,8 +219,13 @@ input,select {
 }
 .order {
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
     gap:8px
+}
+.order-card p {
+    color:var(--grey);
+    font-size:.82rem;
+    line-height:1.45
 }
 .card {
     border:1px solid #333;

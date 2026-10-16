@@ -1,5 +1,5 @@
 // Increment this version for every published release.
-const CACHE_NAME = 'big-orange-chord-beta2-20261008';
+const CACHE_NAME = 'big-orange-chord-beta3-20261016';
 const ASSETS = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest'];
 self.addEventListener('install', event => {
     event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
