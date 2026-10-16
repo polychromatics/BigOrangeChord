@@ -27,7 +27,7 @@
     </section>
 
     <section id="setupScreen" class="screen hidden setup">
-      <header class="topbar"><div><strong>SETUP</strong><span>Big Orange Chord Mobile — Beta 3</span></div><button id="backBtn" class="ghost">MAIN</button></header>
+      <header class="topbar"><div><strong>SETUP</strong><span>Big Orange Chord Mobile — Beta 4</span></div><button id="backBtn" class="ghost">MAIN</button></header>
       <div class="settings-grid">
         <label>BPM<input id="bpm" type="number" min="30" max="300" value="120"></label>
         <button id="tapBtn">TAP BPM</button>
@@ -44,7 +44,7 @@
         </div>
         <p>Sound starts when you press START. Keep this page visible and your screen awake during playback.</p>
       </section>
-      <section class="card order-card"><h2>PLAYBACK SEQUENCE</h2><p>Choose up to 8 section steps. Sections may appear more than once; leave remaining positions as “end”. The main screen still shows each section only once.</p><div id="orderControls" class="order"></div></section>
+      <section class="card order-card"><h2>PLAYBACK SEQUENCE</h2><p>Choose up to 16 section steps. Sections may appear more than once; leave remaining positions as “end”. The main screen still shows each section only once.</p><div id="orderControls" class="order"></div></section>
       <div id="sectionEditors"></div>
       <section class="card"><h2>SOLOS</h2><label>Names (comma separated)<input id="soloNames" placeholder="Jerry, Frank, Natasha"></label><label>Verse repeats per soloist<input id="soloEvery" type="number" min="1" value="1"></label></section>
       <section class="card"><h2>SONGS</h2><div class="row"><input id="songName" placeholder="Song name"><button id="saveSongBtn">SAVE</button></div><div class="row"><select id="songSelect"></select><button id="loadSongBtn">LOAD</button><button id="deleteSongBtn">DELETE</button></div><div class="row"><button id="exportBtn">EXPORT JSON</button><label class="file-button">IMPORT JSON<input id="importInput" type="file" accept="application/json,.json"></label></div></section>
